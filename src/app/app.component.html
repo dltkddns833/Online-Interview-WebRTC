@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>HR컨설팅사업부문</span>
+    <span class="example-spacer"></span>
+    <span>WebCam TEST</span>
+</mat-toolbar>
+
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile colspan="4">
+        <mat-grid-tile-header>WebCamTEST</mat-grid-tile-header>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4">
+        <video id="localVideo" muted="muted" autoplay playsinline></video>
+    </mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+    <mat-grid-tile colspan="4">
+        <mat-grid-tile-footer>Footer</mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>
