@@ -21,8 +21,8 @@ export class AppComponent implements AfterViewInit {
     audio: false
   }
 
+  public localVideoTag : any;
 
-  @ViewChild('localVideo') localVideoTag : any
 
 
   constructor() {
@@ -30,13 +30,15 @@ export class AppComponent implements AfterViewInit {
   
   ngAfterViewInit(){
     if(navigator.mediaDevices != null){
+      this.localVideoTag = document.getElementById('localVideo') as HTMLVideoElement;
       console.log(this.localVideoTag)
       navigator.mediaDevices.getUserMedia(this.constraints)
       .then(stream => {
         console.log('Adding local stream.');
         console.log(stream)
         let video = this.localVideoTag.nativeElement;
-        video.srcObject = stream;
+        console.log(video);
+        this.localVideoTag.srcObject = stream;
       })
       .catch(e => {
           console.log(e);
